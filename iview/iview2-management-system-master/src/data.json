@@ -1,0 +1,12 @@
+{
+	data:[
+		{name:'tom',age:16},
+		{name:'jack',age:16},
+		{name:'marry',age:16},
+		{name:'lus',age:16},
+		{name:'james',age:16},
+		{name:'weide',age:16},
+		{name:'kobe',age:16},
+		{name:'yaoming',age:16}
+	]
+}

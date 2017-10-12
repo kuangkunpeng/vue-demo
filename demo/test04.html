@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>过度</title>
+    <script src="vue.min.js" charset="utf-8"></script>
+    <style type="text/css">
+    	.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active 在低于版本 2.1.8 中 */ {
+  opacity: 0
+}
+    </style>
+  </head>
+  <body>
+    <div id="demo">
+  <button v-on:click="show = !show">
+    Toggle
+  </button>
+  <transition name="fade">
+    <p v-if="show">hello</p>
+  </transition>
+</div>
+  </body>
+  <script type="text/javascript">
+  new Vue({
+  el: '#demo',
+  data: {
+    show: true
+  }
+})
+  </script>
+</html>

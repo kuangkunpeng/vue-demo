@@ -1,0 +1,88 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" charset="utf-8" src="vue.min.js"></script>
+</head>
+<body>
+	<div id="todo-list-example">
+		<!-- <div v-for="(item,index) in todos" :key="todos.id">
+		{{index}} {{item.title}}
+	  
+	</div> -->
+	<!-- <div>
+		<div v-if="Math.random() > 0.5">
+			Sorry
+		</div>
+		<div v-else>
+			Not sorry
+		</div>
+	</div> -->
+	<!-- <span @click="count+=1">{{count}} </span> -->
+	<!-- <div @click.stop="demo1">
+		<button @click.stop="demo2">按键修饰符</button>
+		<div @click.ctrl="demo">Do something</div>
+	</div> -->
+	<!-- <input v-model="is" placeholder="edit me">
+<p>Message is: {{ is }}</p>
+</div> -->
+<!-- <select v-model="is">
+  <option disabled value="">Please select one</option>
+  <option>A</option>
+  <option>B</option>
+  <option>C</option>
+</select>
+<span>Selected: {{ is }}</span> -->
+<select v-model="is" multiple>
+  <option>A</option>
+  <option>B</option>
+  <option>C</option>
+</select>
+<br>
+<span v-for="item in is">Selected: {{ item }}</span>
+<script type="text/javascript">
+
+	new Vue({
+		el: '#todo-list-example',
+		data: {
+			newTodoText: '',
+			is:'',
+			count:0,
+			todos: [
+			{
+				id: 1,
+				title: 'Do the dishes',
+			},
+			{
+				id: 2,
+				title: 'Take out the trash',
+			},
+			{
+				id: 3,
+				title: 'Mow the lawn'
+			}
+			],
+			nextTodoId: 4
+		},
+		methods: {
+			addNewTodo: function () {
+				this.todos.push({
+					id: this.nextTodoId++,
+					title: this.newTodoText
+				})
+				this.newTodoText = ''
+			},
+			demo1:function(){
+				console.log('demo1');
+			},
+			demo2:function(){
+				console.log('demo2');
+			},
+		},
+		mounted:function(){
+
+		}
+	});
+</script>
+</body>
+</html>
